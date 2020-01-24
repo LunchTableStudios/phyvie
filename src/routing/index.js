@@ -2,15 +2,15 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import HomeScreen from '../components/home/screens';
-import CharacterSelectScreen from '../components/characterSelect/screens';
+import CharacterScreen from '../components/characters/screens';
 
 const AppRoutes = createStackNavigator( 
 	{
 		Home : {
 			screen : HomeScreen
 		},
-		CharacterSelect : {
-			screen : CharacterSelectScreen
+		Characters : {
+			screen : CharacterScreen
 		}
 	},
 	{

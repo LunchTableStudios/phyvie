@@ -7,6 +7,8 @@ const store = createStore( rootReducer );
 
 const persistor = persistStore( store );
 
+// persistor.purge();
+
 export {
 	store,
 	persistor

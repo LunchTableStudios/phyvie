@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import characterSelectReducer from '../components/characterSelect/reducers';
+import characterReducer from '../components/characters/reducers';
 
 const rootPersistConfig = {
 	key : 'root',
@@ -10,7 +10,7 @@ const rootPersistConfig = {
 }
 
 const rootReducer = combineReducers( {
-	characterSelectReducer : characterSelectReducer
+	characters : characterReducer
 } );
 
 export default persistReducer( rootPersistConfig, rootReducer );

@@ -4,23 +4,34 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { ADD_CHARACTER, REMOVE_CHARACTER } from '../actions/types';
 
 const INITIAL_STATE = {
-	characters : []
-}
+	loaded : []
+};
 
 const reducer = ( state = INITIAL_STATE, action ) =>
 {
-	let { type, payload } = action;
+	let { type } = action;
 
 	switch( type )
 	{
 		case ADD_CHARACTER :
-			break;
+		{
+			return {
+				...state,
+				loaded : [ ...state.loaded, { id : state.loaded.length } ]
+			}
+		}
 
 		case REMOVE_CHARACTER :
-			break;
-	}
+		{
+			return {
+				...state,
+				loaded : state.loaded.filter( character => character != state.loaded[ state.loaded.length - 1 ] )
+			}
+		}
 
-	return state;
+		default :
+			return state;
+	}
 }
 
 const persistConfig = {
